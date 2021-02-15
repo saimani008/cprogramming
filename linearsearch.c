@@ -27,6 +27,11 @@ void linearsearch(int element,int arry[],int size)
          {
                printf("%d is found at location %d",element,i);
          }
+        else
+        {
+              printf("element not found\n");
+              break;
+        }
     }
 }
 
