@@ -1,14 +1,13 @@
 #include<stdio.h>
-#include<stdlib.h>
-void linearsearch(int element ,int arry[],int size);
+int linearsearch(int element ,int arry[],int size);
+int i;
 int main()
 {
-    int n,key;
+    int n,key,arr[100];
     printf("enter the size of the array:");
     scanf("%d",&n);
-    int *arr = (int *)malloc(n*sizeof(int));
     printf("Enter elements into array :");
-    for(int i=0;i<n;i++)
+    for(i=0;i<n;i++)
     {
            scanf("%d",&arr[i]);
     }
@@ -19,20 +18,33 @@ return 0;
 }
 
 
-void linearsearch(int element,int arry[],int size)
+int linearsearch(int element,int arry[],int size)
 {
-    for(int i=0;i<size;i++)
+    int count =0;
+    for(i=0;i<size;i++)
     {
          if(element==arry[i])
          {
-               printf("%d is found at location %d",element,i);
-         }
-        else
-        {
-              printf("element not found\n");
+              count++;
               break;
-        }
+         }
+         else
+         {
+              count =0;
+         }
+    }
+    if(count==1)
+    {
+        printf("%d element is found at location %d",element,i);
+        break;
+    }
+    else
+    {
+         printf("element not found\n");
     }
 }
+
+
+
 
     
